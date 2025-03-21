@@ -3,33 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="stylevalor.css" rel="stylesheet">
     <title>Pagamento</title>
+    <link rel="stylesheet" href="stylepagamentos.css">
 </head>
 <body>
     <h1>Forma de Pagamento</h1>
-    
-        <summary>
-            <label>Cartão de crédito</label>
-        </summary>
-            <input type="text" nome="num" placeholder="Número do cartão"></input>
-            <input type="text" nome="nome" placeholder="Nome empresso no cartão"></input>
-            <input type="text" nome="vencimento" placeholder="Vencimento(MM/AA)"></input>
-            <input type="text" nome="cvv" placeholder="CVV"></input>
-            <br>
-            <label>CPF ou CNPJ do portador do cartão</label>
-            <br>
-            <input type="text" nome="cpf"></input>
-            <br>
+
+    <div id="form-pagamento">
+        <div class="input-group">
+            <label>Cartão de Crédito</label>
+            <input type="text" id="num-cartao" placeholder="Número do cartão">
+            <input type="text" id="nome-cartao" placeholder="Nome impresso no cartão">
+            <input type="text" id="vencimento-cartao" placeholder="Vencimento (MM/AA)">
+            <input type="text" id="cvv-cartao" placeholder="CVV">
+        </div>
+
+        <div class="input-group">
+            <label>CPF ou CNPJ do Portador do Cartão</label>
+            <input type="text" id="cpf-cartao">
+        </div>
+
+        <div class="input-group">
             <label>Telefone</label>
-            <br>
-            <input type="tel" nome="telefone" placeholder="(00)00000-0000"></label>
-            <br>
-            <br>
-            <br>
-            <label>Comentários adicionais</label>
-            <input type="text" nome="comentario"></input>
-           
-        
+            <input type="tel" id="telefone" placeholder="(00) 00000-0000">
+        </div>
+
+        <div class="input-group">
+            <label>Comentários Adicionais</label>
+            <input type="text" id="comentario">
+        </div>
+
+        <button id="botao-pagamento">Confirmar Pagamento</button>
+    </div>
 </body>
 </html>

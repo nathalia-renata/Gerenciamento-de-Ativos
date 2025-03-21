@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(29, 14, 46, 0.076);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+header {
+    width: 100%;
+    background-color: #58181862;
+    padding: 15px 0;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+nav h1 {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+#principal {
+    max-width: 800px;
+    text-align: center;
+    margin-top: 20px;
+}
+#principal h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+#principal p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+#recursos {
+    text-align: left;
+    margin-top: 20px;
+    max-width: 600px;
+    color: rgb(0, 0, 0);
+}
+
+#recursos h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#recursos ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+#recursos li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+
+#botao-valor {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+}
+
+#botao-valor:hover {
+    background-color: #218838;
+}
+#pd{
+    color: white;
+}
+#rc{
+    color: white;
+}

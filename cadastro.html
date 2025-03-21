@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="stylevalor.css" rel="stylesheet">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="stylecadas.css">
 </head>
 <body>
-    <h1>Cadastre Gratuitamente</h1>
-    <label>Nome:</label>
-    <input type="text" nome="nome" placeholder="Nome Completo"></label>
-    <br>
-    <label>CPF/CNPJ:</label>
-    <input type="text" nome="cpf"></label>
-    <br>
-    <label>Localização:</label>
-    <input type="text" nome="endereco" placeholder="Endereço"></label>
-    <br>
-    <label>Descrição:</label>
-    <input type="text" nome="descricao"></label>
-    <br>
-    <label>Status:</label>
-        <select>
-    <option value="ativo">Ativo</option>
-    <option value="inativo">Inativo</option>
-        </select>
-    <br>
-    <label>Senha:</label>
-    <input type="password" nome="senha" placeholder="**********"></label>
-    <br>
-    <br>
-    <input type="submit" value="Salvar"></input>
-    <input type="reset" value="Limpar"></input>
+    <div class="container">
+        <h1>Cadastre-se Gratuitamente</h1>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+
+            <label for="cpf">CPF/CNPJ:</label>
+            <input type="text" id="cpf" name="cpf" required>
+
+            <label for="endereco">Localização:</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Endereço" required>
+
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao">
+
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="ativo">Ativo</option>
+                <option value="inativo">Inativo</option>
+            </select>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="" required>
+
+            <div class="buttons">
+                <input type="submit" value="Salvar">
+                <input type="reset" value="Limpar">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
