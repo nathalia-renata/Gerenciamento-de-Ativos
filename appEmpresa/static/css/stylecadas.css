@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:rgba(29, 14, 46, 0.076);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.link-voltar {
+    display: inline-block; /* O link aparece como um botão */
+    margin-bottom: 20px; /* Espaçamento abaixo do link */
+    color: #4CAF50; /* Tom elegante de verde */
+    font-size: 16px; /* Tamanho confortável para leitura */
+    font-weight: bold; /* Destaque no texto */
+    text-decoration: none; /* Remove o sublinhado */
+    padding: 8px 16px; /* Cria um espaço interno semelhante a um botão */
+    border: 2px solid #4CAF50; /* Adiciona uma borda verde */
+    border-radius: 5px; /* Bordas suavemente arredondadas */
+    transition: all 0.3s ease-in-out; /* Suavidade nas interações */
+}
+
+.link-voltar:hover {
+    color: white; /* Texto muda para branco no hover */
+    background-color: #4CAF50; /* Fundo verde no hover */
+    border-color: #4CAF50; /* Mantém a borda da mesma cor */
+    text-decoration: none; /* Garante que o sublinhado não volte */
+    transform: scale(1.05); /* Leve aumento no tamanho */
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 10px;
+}
+input,
+select {
+    width: 270px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+input[type="submit"],
+input[type="reset"] {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+input[type="reset"] {
+    background-color: #dc3545;
+    color: white;
+}
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+input[type="reset"]:hover {
+    background-color: #c82333;
+}
+
+

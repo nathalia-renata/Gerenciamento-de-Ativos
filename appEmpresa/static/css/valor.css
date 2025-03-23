@@ -1,0 +1,64 @@
+
+body{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(29, 14, 46, 0.076);
+}
+#plano1{
+    width: 80%;
+    max-width: 200px;
+    height: 500px;
+    background-color: white;
+    border: 5px solid black;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 10px;
+}
+#adquirir{
+    border: 2px solid black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 100px;
+    transition: 1s;
+    border-radius: 5px;
+    padding: 2px;
+    background-color:  rgb(114, 2, 2);
+}
+#adquirir:hover{
+    background-color: rgb(238, 61, 38);
+    transition: 1s;
+    box-shadow: 5px 5px 10px rgba(214, 30, 30, 0.37);
+}
+#plano2{
+    width: 80%;
+    max-width: 200px;
+    height: 500px;
+    background-color: white;
+    border: 5px solid black;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 10px;
+}
+#plano3{
+    width: 80%;
+    max-width: 200px;
+    height: 500px;
+    background-color: white;
+    border: 5px solid black;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 10px;
+}
+#principal{
+    display: flex;
+}
+#nossos{
+    justify-content: center;
+    align-items: center;
+}

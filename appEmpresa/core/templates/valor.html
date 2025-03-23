@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores - Your Assets</title>
+    <link rel="stylesheet" href="{% static 'css/valor.css' %}">
+</head>
+<body>
+    <div id="principal">
+        <!-- Nossos Planos -->
+        <div id="nossos">
+            <h1>Nossos Planos</h1>
+        </div>
+
+        <!-- Plano Básico -->
+        <div id="plano1">
+            <h2>Básico</h2>
+            <p>Para equipes de TI que desejam implementar o básico de chamados.</p>
+            <h3>R$229/mês</h3>
+            <p>Por operador</p>
+            <ul>
+                <li>Gestão de incidentes</li>
+                <li>Gestão de Ativos</li>
+                <li>Ativos, chamados e solicitantes ilimitados</li>
+                <li>Portal de Autoatendimento</li>
+                <li>Base de Conhecimento</li>
+                <li>Painel de controle e Relatórios</li>
+            </ul>
+            <button id="adquirir">Adquirir Plano</button>
+        </div>
+
+        <!-- Plano Excelente -->
+        <div id="plano2">
+            <h2>Excelente</h2>
+            <p>Para equipes que precisam aprimorar a colaboração com workflows complexos.</p>
+            <h3>R$350/mês</h3>
+            <p>Por operador</p>
+            <ul>
+                <li>Todos os recursos do plano Básico</li>
+                <li>Gestão de Mudanças</li>
+                <li>Gestão de Contratos e SLAs</li>
+                <li>Módulo de Enquetes</li>
+                <li>Gestão de atividades preventivas</li>
+                <li>Gestão de Problemas</li>
+            </ul>
+            <button id="adquirir">Adquirir Plano</button>
+        </div>
+
+        <!-- Plano Premium -->
+        <div id="plano3">
+            <h2>Premium</h2>
+            <p>Para equipes que desejam implementar funcionalidades avançadas.</p>
+            <h3>R$400/mês</h3>
+            <p>Por operador</p>
+            <ul>
+                <li>Todos os recursos do plano Excelente</li>
+                <li>Gestão de incidentes avançada</li>
+                <li>Relatórios personalizados</li>
+                <li>Suporte 24/7</li>
+            </ul>
+            <button id="adquirir">Adquirir Plano</button>
+        </div>
+    </div>
+</body>
+</html>

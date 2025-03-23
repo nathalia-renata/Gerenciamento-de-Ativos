@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Ativos Empresariais</title>
+    <!-- Link para o Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styleindex.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://via.placeholder.com/50" alt="Logo Temporária" width="50">
+                    Your Assets
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'index' %}">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'valo' %}">Preços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'cadastro' %}">Teste Grátis</a>
+                        </li>
+
+                        <!-- Link para gerar PDF -->
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light" href="{% url 'gerar_pdf' %}" role="button">Gerar PDF dos Ativos</a>
+                        </li>
+
+                        <!-- Novo link para abrir a lista de ativos em uma nova aba -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lista_ativos' %}" target="_blank">Lista de Ativos</a>
+                        </li>
+
+                    {% if user.is_authenticated %}
+                        <!-- Exibe o nome do usuário logado -->
+                        <li class="nav-item">
+                            <span class="navbar-text text-white">Bem-vindo, {{ user.username }}</span>
+                        </li>
+                        <!-- Botão de logout -->
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light" href="{% url 'logout' %}" role="button">Logout</a>
+                        </li>
+                    {% else %}
+                        <!-- Botões de Login e Cadastro -->
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light" href="{% url 'login' %}" role="button">Faça Login</a>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <a class="btn btn-success" href="{% url 'cadastro' %}" role="button">Cadastre-se</a>
+                        </li>
+                    {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="principal">
+        <div class="container">
+            <h1>Solução para sua Operação</h1>
+            <p>
+                Na otimização dos ativos, na alocação de recursos e no gerenciamento das ordens de serviço é essencial ter um sistema de gerenciamento de ativos corporativos (EAM) para tomar decisões efetivas sobre o controle dos custos e a criação de orçamentos.
+            </p>
+            <p>
+                Gerenciar os ativos de forma efetiva evita aumentos nos custos de mão de obra e de manutenção e a diminuição do retorno sobre os ativos (ROA), simultaneamente garantindo a conformidade com as metas ambientais, sociais e de governança (ESG) e com os protocolos de saúde, segurança e meio ambiente (SSMA).
+            </p>
+            <p>
+                A Your Assets oferece soluções de melhores práticas para os setores, ajudando na redução dos riscos de segurança e dos custos operacionais.
+            </p>
+            <div id="recursos">
+                <h2>O que você encontra por aqui?</h2>
+                <ul>
+                    <li>Rápida implantação baseada nas melhores práticas de ITIL;</li>
+                    <li>Portal amigável com seu catálogo de serviços;</li>
+                    <li>Relatórios personalizáveis e fácil sustentação para melhorias contínuas.</li>
+                </ul>
+            </div>
+            <a id="botao-valor" class="btn btn-success" href="{% url 'valo' %}">Veja os Valores</a>
+        </div>
+    </main>
+
+    <!-- Adicionando o script do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

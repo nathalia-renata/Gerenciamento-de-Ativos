@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Ativos</title>
+    <style>
+     
+
+        /* Cabeçalho */
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Tabela */
+        table {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table thead tr {
+            background-color: #4CAF50; /* Verde para o cabeçalho */
+            color: white;
+        }
+
+        table th, table td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #fff;
+        }
+
+        table tbody tr:hover {
+            background-color: rgba(0, 128, 128, 0.1);
+            transition: 0.3s;
+        }
+
+        /* Mensagem de Nenhum Ativo */
+        td[colspan="5"] {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Status (Estilização Extra) */
+        td:last-child {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        td:last-child:contains('Ativo') {
+            color: #28a745; /* Verde */
+        }
+
+        td:last-child:contains('Inativo') {
+            color: #dc3545; /* Vermelho */
+        }
+
+        /* Estilo do título */
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            color: #800020;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Ativos</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Endereço</th>
+                <th>Descrição</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ativo in ativos %}
+            <tr>
+                <td>{{ ativo.nome }}</td>
+                <td>{{ ativo.cpf }}</td>
+                <td>{{ ativo.endereco }}</td>
+                <td>{{ ativo.descricao }}</td>
+                <td>
+                    {% if ativo.status %}
+                        Ativo
+                    {% else %}
+                        Inativo
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" style="text-align: center;">Nenhum ativo encontrado.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

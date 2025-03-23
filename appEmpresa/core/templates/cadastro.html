@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Your Assets</title>
+    <link rel="stylesheet" href="{% static 'css/stylecadas.css' %}">
+</head>
+<body>
+    <div class="container">
+        <a class="link-voltar" href="{% url 'index' %}" >← Voltar para o início</a>
+
+        <h1>Cadastre Gratuitamente</h1>
+
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Nome Completo" required>
+
+            <label for="cpf">CPF/CNPJ:</label>
+            <input type="text" name="cpf" id="cpf" placeholder="CPF ou CNPJ" required>
+
+            <label for="endereco">Localização:</label>
+            <input type="text" name="endereco" id="endereco" placeholder="Endereço" required>
+
+            <label for="descricao">Descrição:</label>
+            <input type="text" name="descricao" id="descricao" placeholder="Descrição">
+
+            <label for="status">Status:</label>
+            <select name="status" id="status">
+                <option value="ativo">Ativo</option>
+                <option value="inativo">Inativo</option>
+            </select>
+
+            <label for="senha">Senha:</label>
+            <input 
+                type="password" 
+                name="senha" 
+                id="senha" 
+                placeholder="**********" 
+                required 
+                title="A senha deve ter no mínimo 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial (@#$%^&+=).">
+
+            <div class="buttons">
+                <input type="submit" value="Salvar">
+                <input type="reset" value="Limpar">
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cpfField = document.getElementById("cpf");
+            cpfField.addEventListener("input", function() {
+                let value = cpfField.value.replace(/\D/g, ""); // Remove qualquer caractere não numérico
+                if (value.length <= 11) {
+                    // Formata como CPF: 000.000.000-00
+                    cpfField.value = value
+                        .replace(/(\d{3})(\d)/, "$1.$2")
+                        .replace(/(\d{3})(\d)/, "$1.$2")
+                        .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+                } else {
+                    // Formata como CNPJ: 00.000.000/0000-00
+                    cpfField.value = value
+                        .replace(/^(\d{2})(\d)/, "$1.$2")
+                        .replace(/(\d{3})(\d)/, "$1.$2")
+                        .replace(/(\d{3})(\d)/, "$1/$2")
+                        .replace(/(\d{4})(\d{1,2})$/, "$1-$2");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

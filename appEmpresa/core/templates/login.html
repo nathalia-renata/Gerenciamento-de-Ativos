@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/stylelogin.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Faça seu login</h1>
+        
+        <!-- Adicionando a tag POST e CSRF token -->
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Campo para o CPF/CNPJ -->
+            <label for="cpf">CPF/CNPJ</label>
+            <input type="text" id="cpf" name="cpf" required>
+
+            <!-- Campo para a Senha -->
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <!-- Botões para submeter ou limpar o formulário -->
+            <input type="submit" value="Entrar">
+            <input type="reset" value="Limpar">
+        </form>
+
+        <!-- Exibindo as mensagens de sucesso ou erro -->
+        {% if messages %}
+            <div class="alert alert-info">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

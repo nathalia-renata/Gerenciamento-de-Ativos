@@ -1,0 +1,180 @@
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(29, 14, 46, 0.076);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0; /* Remover o padding extra */
+}
+
+/* Cabeçalho */
+header {
+    width: 100%;
+    background-color:  #212529;
+    padding: 15px 0;
+}
+
+/* Barra de navegação */
+nav {
+    width: 100%;
+    padding: 0;
+}
+
+/* Título da navbar */
+nav h1 {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Links de navegação */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Efeito hover nos links da navbar */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Configuração do conteúdo principal */
+#principal {
+    max-width: 800px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px; /* Adicionar padding para espaçamento */
+}
+
+/* Título principal */
+#principal h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Estilo dos parágrafos no conteúdo principal */
+#principal p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Estilo para a seção de recursos */
+#recursos {
+    text-align: left;
+    margin-top: 20px;
+    max-width: 600px;
+    color: rgb(0, 0, 0);
+}
+
+/* Título da seção de recursos */
+#recursos h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para lista dentro de recursos */
+#recursos ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* Estilo para os itens da lista */
+#recursos li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Estilo para o botão "Veja os Valores" */
+#botao-valor {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Efeito hover no botão "Veja os Valores" */
+#botao-valor:hover {
+    background-color: #218838;
+}
+
+/* Estilo para o botão de Gerar PDF */
+#botao-pdf {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Efeito hover no botão Gerar PDF */
+#botao-pdf:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos adicionais para o texto no corpo */
+#pd {
+    color: white;
+}
+
+#rc {
+    color: white;
+}
+
+/* Ajustes para garantir que a barra de navegação do Bootstrap e os itens de menu se alinhem corretamente */
+.navbar {
+    z-index: 1000; /* Garantir que a navbar esteja acima do conteúdo */
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 20px;
+}
+
+.navbar-nav .btn {
+    margin-left: 20px;
+}
+
+/* Responsividade para garantir que os elementos se ajustem em telas menores */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .navbar-nav .btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    #principal {
+        padding: 10px;
+    }
+}
